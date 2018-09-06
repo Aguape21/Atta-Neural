@@ -1,0 +1,21 @@
+program AttaNeural;
+
+{$mode objfpc}{$H+}
+
+uses
+  {$IFDEF UNIX}{$IFDEF UseCThreads}
+  cthreads,
+  {$ENDIF}{$ENDIF}
+  Interfaces, // this includes the LCL widgetset
+  Forms, tachartlazaruspkg, aqInicio, aqBlibNeural, dmcsv, aqPopulacao
+  { you can add units after this };
+
+{$R *.res}
+
+begin
+  RequireDerivedFormResource:=True;
+  Application.Initialize;
+  Application.CreateForm(TjInicio, jInicio);
+  Application.Run;
+end.
+
